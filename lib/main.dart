@@ -13,6 +13,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         fontFamily: 'Lato',
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.lightBlueAccent,
+        ),
+        inputDecorationTheme: const InputDecorationTheme(
+          hintStyle: TextStyle(fontWeight: FontWeight.bold),
+          prefixIconColor: Color.fromRGBO(119, 119, 119, 1),
+        ),
       ),
       home: HomePage(),
     );
