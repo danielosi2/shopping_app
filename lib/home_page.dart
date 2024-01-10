@@ -121,6 +121,18 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            label: '',
+            icon: Icon(Icons.home),
+          ),
+          BottomNavigationBarItem(
+            label: '',
+            icon: Icon(Icons.shopping_cart),
+          )
+        ],
+      ),
     );
   }
 }
