@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shopping_app/cart_provider.dart';
 
 class ProductDetailsPage extends StatefulWidget {
   const ProductDetailsPage({super.key, required this.product});
@@ -11,6 +13,10 @@ class ProductDetailsPage extends StatefulWidget {
 
 class _ProductDetailsPageState extends State<ProductDetailsPage> {
   int pickedSize = 0;
+
+  void onTap() {
+    Provider.of<CartProvider>(context, listen: false).addProduct(widget.product);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +82,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                   padding: const EdgeInsets.all(20.0),
                   child: ElevatedButton.icon(
                     icon: const Icon(Icons.shopping_cart, color: Colors.black),
-                    onPressed: () {},
+                    onPressed: onTap,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Theme.of(context).colorScheme.primary,
                       minimumSize: const Size(double.infinity, 50),
