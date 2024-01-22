@@ -7,8 +7,7 @@ class CartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Map<String, dynamic>> cart = Provider.of<CartProvider>(context).cart;
-    print(cart);
+    final cart = (Provider.of<CartProvider>(context).cart);
     return Scaffold(
       appBar: AppBar(
         title: Text('cart'),
@@ -32,7 +31,7 @@ class CartPage extends StatelessWidget {
               cartItem['title'].toString(),
               style: Theme.of(context).textTheme.bodySmall,
             ),
-            subtitle: Text('Sizze: ${cartItem['size']}'),
+            subtitle: Text('Size: ${cartItem['sizes']}'),
           );
         },
       ),
